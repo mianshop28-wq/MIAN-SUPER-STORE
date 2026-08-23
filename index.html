@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta name="google-site-verification" content="qh7MX_AopwGgTqLDLuoa394_DTT_s6YI0eo2nbcN2PU" />
-    <meta name="description" content="Mian Super Store Narowal - Online grocery and general store. Shop grocery, household products and place your order online in Narowal.">
+
+<meta name="google-site-verification" content="qh7MX_AopwGgTqLDLuoa394_DTT_s6YI0eo2nbcN2PU">
+
+<meta name="description"
+content="Mian Super Store Narowal - Online grocery and general store. Shop grocery, household products and place your order online in Narowal.">
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Mian Super Store Narowal | Online Grocery Store</title>
 
@@ -37,16 +44,16 @@ body{
 }
 
 
-/* =========================
-   LANDING PAGE
-========================= */
+/* =========================================================
+   HOME SCREEN
+========================================================= */
 
 #homeScreen{
     min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:30px;
+    padding:30px 20px;
 }
 
 .homeBox{
@@ -57,7 +64,7 @@ body{
 .logo{
     width:115px;
     height:115px;
-    margin:0 auto 20px;
+    margin:0 auto 18px;
 
     border-radius:50%;
 
@@ -83,7 +90,7 @@ body{
 }
 
 .storeTitle{
-    font-size:clamp(42px,8vw,78px);
+    font-size:clamp(38px,8vw,78px);
     font-weight:1000;
     letter-spacing:2px;
     margin:0;
@@ -94,10 +101,18 @@ body{
         3px 3px 0 #d9f8e9;
 }
 
+.storeNarowal{
+    font-size:clamp(24px,4vw,42px);
+    font-weight:900;
+    color:#087f5b;
+    margin-top:5px;
+    letter-spacing:1px;
+}
+
 .storeSubtitle{
     font-size:18px;
     color:#557067;
-    margin:12px 0 40px;
+    margin:10px 0 35px;
 }
 
 .choiceGrid{
@@ -108,40 +123,6 @@ body{
     min-height:300px;
     max-width:1000px;
     margin:auto;
-}
-
-.choice.admin{
-    position:absolute;
-    top:-10px;
-    right:0;
-    width:155px;
-    min-height:90px;
-    padding:14px;
-    border-radius:18px;
-    z-index:2;
-}
-
-.choice.admin .choiceIcon{
-    font-size:28px;
-    margin-bottom:4px;
-}
-
-.choice.admin .choiceTitle{
-    font-size:18px;
-}
-
-.choice.admin .choiceSmall{
-    display:none;
-}
-
-.choice.order{
-    width:min(760px,88%);
-    min-height:310px;
-    padding:45px 30px;
-}
-
-.choice.order .choiceIcon{
-    font-size:80px;
 }
 
 .choice{
@@ -165,11 +146,43 @@ body{
 }
 
 .choice.admin{
+    position:absolute;
+    top:-10px;
+    right:0;
+
+    width:155px;
+    min-height:90px;
+    padding:14px;
+
+    border-radius:18px;
+    z-index:2;
+
     background:linear-gradient(135deg,#162d26,#087f5b);
 }
 
+.choice.admin .choiceIcon{
+    font-size:28px;
+    margin-bottom:4px;
+}
+
+.choice.admin .choiceTitle{
+    font-size:18px;
+}
+
+.choice.admin .choiceSmall{
+    display:none;
+}
+
 .choice.order{
+    width:min(760px,88%);
+    min-height:310px;
+    padding:45px 30px;
+
     background:linear-gradient(135deg,#e88900,#ffb703);
+}
+
+.choice.order .choiceIcon{
+    font-size:80px;
 }
 
 .choiceIcon{
@@ -191,9 +204,9 @@ body{
 }
 
 
-/* =========================
+/* =========================================================
    MAIN APP
-========================= */
+========================================================= */
 
 #app{
     display:none;
@@ -248,6 +261,12 @@ body{
     font-size:22px;
 }
 
+.miniBrand small{
+    display:block;
+    opacity:.8;
+    margin-top:2px;
+}
+
 .backBtn{
     background:white;
     color:#063b2c;
@@ -259,9 +278,9 @@ body{
 }
 
 
-/* =========================
+/* =========================================================
    CONTENT
-========================= */
+========================================================= */
 
 .container{
     width:min(1250px,94%);
@@ -281,8 +300,14 @@ body{
     margin:5px 0;
 }
 
+.smallText{
+    color:#71837c;
+}
 
-/* SEARCH */
+
+/* =========================================================
+   SEARCH
+========================================================= */
 
 .searchBox{
     display:flex;
@@ -306,7 +331,9 @@ body{
 }
 
 
-/* CATEGORY */
+/* =========================================================
+   CATEGORY
+========================================================= */
 
 .categoryBar{
     display:flex;
@@ -332,38 +359,14 @@ body{
 }
 
 
-/* PRODUCTS */
+/* =========================================================
+   PRODUCTS
+========================================================= */
 
 .products{
     display:grid;
     grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
     gap:16px;
-}
-
-@media(max-width:700px){
-    .products{
-        grid-template-columns:repeat(3,minmax(0,1fr));
-        gap:9px;
-    }
-    .productImage{
-        height:105px;
-    }
-    .productInfo{
-        padding:9px;
-    }
-    .productInfo h3{
-        font-size:14px;
-        white-space:nowrap;
-        overflow:hidden;
-        text-overflow:ellipsis;
-    }
-    .productPrice{
-        font-size:15px;
-        margin:7px 0 3px;
-    }
-    .stockText,.productCategory{
-        font-size:11px;
-    }
 }
 
 .productCard{
@@ -419,9 +422,9 @@ body{
 }
 
 
-/* =========================
+/* =========================================================
    MODALS
-========================= */
+========================================================= */
 
 .modal{
     display:none;
@@ -472,7 +475,9 @@ body{
 }
 
 
-/* DETAIL */
+/* =========================================================
+   DETAIL
+========================================================= */
 
 .detailImage{
     width:100%;
@@ -507,7 +512,9 @@ body{
 }
 
 
-/* FORMS */
+/* =========================================================
+   FORMS
+========================================================= */
 
 label{
     display:block;
@@ -515,7 +522,9 @@ label{
     margin-top:12px;
 }
 
-input,textarea,select{
+input,
+textarea,
+select{
     width:100%;
     padding:13px;
 
@@ -560,6 +569,16 @@ textarea{
     cursor:pointer;
 }
 
+.blueBtn{
+    background:#1769aa;
+    color:white;
+    border:0;
+    border-radius:9px;
+    padding:12px 17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
 .full{
     width:100%;
 }
@@ -570,9 +589,93 @@ textarea{
 }
 
 
-/* =========================
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+.quantityRow{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+}
+
+.quantityRow input,
+.quantityRow select{
+    margin-top:6px;
+}
+
+
+/* =========================================================
+   MANUAL ORDER
+========================================================= */
+
+.manualItem{
+    background:#f7fcf9;
+    border:1px solid #d8eae1;
+    border-radius:14px;
+    padding:12px;
+    margin:10px 0;
+}
+
+.manualItemTop{
+    display:grid;
+    grid-template-columns:1fr 90px 115px 42px;
+    gap:7px;
+    align-items:end;
+}
+
+.manualItemTop input,
+.manualItemTop select{
+    margin-top:4px;
+}
+
+.manualItemName{
+    font-weight:bold;
+    color:#063b2c;
+}
+
+.manualItemPrice{
+    font-weight:900;
+    color:var(--green);
+    margin-top:6px;
+}
+
+.removeItemBtn{
+    height:42px;
+    border:0;
+    border-radius:8px;
+    background:#d62828;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.manualTotal{
+    background:#063b2c;
+    color:white;
+    border-radius:12px;
+    padding:15px;
+    margin-top:15px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:20px;
+    font-weight:900;
+}
+
+.manualEmpty{
+    background:#fff8e8;
+    border:1px dashed #e88900;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+    color:#805600;
+}
+
+
+/* =========================================================
    ADMIN
-========================= */
+========================================================= */
 
 .adminSection{
     margin-top:25px;
@@ -604,7 +707,9 @@ textarea{
 }
 
 
-/* ORDERS */
+/* =========================================================
+   ORDERS
+========================================================= */
 
 .orderCard{
     background:white;
@@ -627,13 +732,153 @@ textarea{
     font-weight:bold;
 }
 
+.orderSummary{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+}
 
-/* RESPONSIVE */
+.orderNumber{
+    font-weight:900;
+    color:var(--green);
+}
+
+.orderDetails{
+    display:none;
+    margin-top:15px;
+    padding-top:15px;
+    border-top:1px dashed #cfded7;
+}
+
+.orderCard.open .orderDetails{
+    display:block;
+}
+
+.orderToggle{
+    border:0;
+    border-radius:10px;
+    padding:9px 12px;
+    background:#edf5f1;
+    color:#063b2c;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.printBtn{
+    margin-top:10px;
+    border:0;
+    border-radius:8px;
+    padding:10px 14px;
+    background:#1769aa;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.successOverlay{
+    position:fixed;
+    inset:0;
+    z-index:300;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,.62);
+    padding:20px;
+}
+
+.successBox{
+    width:min(520px,100%);
+    background:white;
+    border-radius:24px;
+    padding:35px 25px;
+    text-align:center;
+    box-shadow:0 25px 70px rgba(0,0,0,.35);
+}
+
+.successBox .successIcon{
+    font-size:60px;
+}
+
+.successBox h2{
+    color:var(--green);
+    margin:12px 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media(max-width:700px){
 
-    .choice{
-        min-height:180px;
+    .products{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:9px;
+    }
+
+    .productImage{
+        height:105px;
+    }
+
+    .productInfo{
+        padding:9px;
+    }
+
+    .productInfo h3{
+        font-size:14px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+    }
+
+    .productPrice{
+        font-size:15px;
+        margin:7px 0 3px;
+    }
+
+    .stockText,
+    .productCategory{
+        font-size:11px;
+    }
+
+    .choiceGrid{
+        min-height:240px;
+    }
+
+    .choice.admin{
+        width:105px;
+        min-height:70px;
+        top:0;
+        right:0;
+        padding:10px;
+    }
+
+    .choice.admin .choiceIcon{
+        font-size:22px;
+    }
+
+    .choice.admin .choiceTitle{
+        font-size:14px;
+    }
+
+    .choice.order{
+        width:92%;
+        min-height:230px;
+        padding:30px 18px;
+    }
+
+    .choice.order .choiceIcon{
+        font-size:60px;
+    }
+
+    .choice.order .choiceTitle{
+        font-size:28px;
     }
 
     .headerInner{
@@ -648,133 +893,87 @@ textarea{
         flex-direction:column;
     }
 
+    .manualItemTop{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .manualItemTop > div:first-child{
+        grid-column:1 / -1;
+    }
+
+    .removeItemBtn{
+        width:100%;
+    }
+
 }
 
-
-.quantityRow{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px;
-}
-.quantityRow input,.quantityRow select{
-    margin-top:6px;
-}
-.orderSummary{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-}
-.orderNumber{
-    font-weight:900;
-    color:var(--green);
-}
-.orderDetails{
-    display:none;
-    margin-top:15px;
-    padding-top:15px;
-    border-top:1px dashed #cfded7;
-}
-.orderCard.open .orderDetails{
-    display:block;
-}
-.orderToggle{
-    border:0;
-    border-radius:10px;
-    padding:9px 12px;
-    background:#edf5f1;
-    color:#063b2c;
-    font-weight:bold;
-    cursor:pointer;
-}
-.printBtn{
-    margin-top:10px;
-    border:0;
-    border-radius:8px;
-    padding:10px 14px;
-    background:#1769aa;
-    color:white;
-    cursor:pointer;
-    font-weight:bold;
-}
-.successOverlay{
-    position:fixed;
-    inset:0;
-    z-index:300;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    background:rgba(0,0,0,.62);
-    padding:20px;
-}
-.successBox{
-    width:min(520px,100%);
-    background:white;
-    border-radius:24px;
-    padding:35px 25px;
-    text-align:center;
-    box-shadow:0 25px 70px rgba(0,0,0,.35);
-}
-.successBox .successIcon{
-    font-size:60px;
-}
-.successBox h2{
-    color:var(--green);
-    margin:12px 0;
-}
-@media(max-width:700px){
-    .choiceGrid{
-        min-height:240px;
-    }
-    .choice.admin{
-        width:105px;
-        min-height:70px;
-        top:0;
-        right:0;
-        padding:10px;
-    }
-    .choice.admin .choiceIcon{
-        font-size:22px;
-    }
-    .choice.admin .choiceTitle{
-        font-size:14px;
-    }
-    .choice.order{
-        width:92%;
-        min-height:230px;
-        padding:30px 18px;
-    }
-    .choice.order .choiceIcon{
-        font-size:60px;
-    }
-    .choice.order .choiceTitle{
-        font-size:28px;
-    }
-}
 @media(min-width:701px){
+
     .choiceGrid .choice.admin{
         right:10px;
     }
+
 }
 
 
-/* THERMAL PRINT */
+/* =========================================================
+   THERMAL PRINT
+   3 INCH = 76.2MM
+========================================================= */
+
 @media print{
+
     @page{
-        size:72mm auto;
-        margin:2mm;
+        size:76.2mm auto;
+        margin:0;
     }
+
+    html,
+    body{
+        width:76.2mm !important;
+        margin:0 !important;
+        padding:0 !important;
+    }
+
+    body{
+        background:white !important;
+    }
+
+    body *{
+        visibility:hidden !important;
+    }
+
+    .printArea,
+    .printArea *{
+        visibility:visible !important;
+    }
+
+    .printArea{
+        position:absolute !important;
+        left:0 !important;
+        top:0 !important;
+
+        width:76.2mm !important;
+
+        margin:0 !important;
+        padding:2mm 2.5mm !important;
+
+        background:white !important;
+    }
+
 }
+
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     FIRST SCREEN
-========================= -->
+<!-- =========================================================
+     HOME
+========================================================= -->
 
 <section id="homeScreen">
 
@@ -788,17 +987,24 @@ textarea{
             MIAN SUPER STORE
         </h1>
 
+        <div class="storeNarowal">
+            NAROWAL
+        </div>
+
         <p class="storeSubtitle">
+            🛒 Online Grocery Store • Narowal<br>
             Quality Products • Fresh Items • Easy Ordering
         </p>
 
-
         <div class="choiceGrid">
 
-            <button type="button" class="choice admin"
-                    >
+            <button
+                type="button"
+                class="choice admin">
 
-                <span class="choiceIcon">🔐</span>
+                <span class="choiceIcon">
+                    🔐
+                </span>
 
                 <span class="choiceTitle">
                     ADMIN
@@ -811,17 +1017,20 @@ textarea{
             </button>
 
 
-            <button type="button" class="choice order"
-                    >
+            <button
+                type="button"
+                class="choice order">
 
-                <span class="choiceIcon">🛒</span>
+                <span class="choiceIcon">
+                    🛒
+                </span>
 
                 <span class="choiceTitle">
                     ORDER
                 </span>
 
                 <span class="choiceSmall">
-                    Browse Products & Place Order
+                    Online Grocery • Narowal
                 </span>
 
             </button>
@@ -833,13 +1042,11 @@ textarea{
 </section>
 
 
-
-<!-- =========================
-     APP
-========================= -->
+<!-- =========================================================
+     MAIN APP
+========================================================= -->
 
 <section id="app">
-
 
 <header class="topHeader">
 
@@ -851,15 +1058,21 @@ textarea{
                 MSS
             </div>
 
-            <h1>
-                Mian Super Store
-            </h1>
+            <div>
+                <h1>
+                    Mian Super Store
+                </h1>
+
+                <small>
+                    Online Grocery Store • Narowal
+                </small>
+            </div>
 
         </div>
 
-
-        <button class="backBtn"
-                onclick="goHome()">
+        <button
+            class="backBtn"
+            onclick="goHome()">
 
             🏠 Home
 
@@ -870,9 +1083,7 @@ textarea{
 </header>
 
 
-
 <div class="container">
-
 
     <div class="panelHeading">
 
@@ -883,17 +1094,32 @@ textarea{
             </h2>
 
             <div class="smallText">
-                Search products and order easily
+                Online Grocery Store — Narowal
             </div>
 
         </div>
 
-        <button class="primary"
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+
+            <button
+                class="secondary"
+                onclick="openManualOrder()">
+
+                📝 Manual Order
+
+            </button>
+
+
+            <button
+                class="primary"
                 onclick="loadProducts()">
 
-            🔄 Refresh
+                🔄 Refresh
 
-        </button>
+            </button>
+
+        </div>
 
     </div>
 
@@ -912,16 +1138,17 @@ textarea{
 
     <!-- CATEGORIES -->
 
-    <div id="categoryBar"
-         class="categoryBar">
-
+    <div
+        id="categoryBar"
+        class="categoryBar">
     </div>
 
 
     <!-- PRODUCTS -->
 
-    <div id="products"
-         class="products">
+    <div
+        id="products"
+        class="products">
 
         Loading products...
 
@@ -932,46 +1159,55 @@ textarea{
 </section>
 
 
-
-<!-- =========================
+<!-- =========================================================
      PRODUCT DETAIL
-========================= -->
+========================================================= -->
 
-<div id="detailModal"
-     class="modal">
+<div
+    id="detailModal"
+    class="modal">
 
     <div class="modalBox">
 
-        <button class="close"
-                onclick="closeModal('detailModal')">
+        <button
+            class="close"
+            onclick="closeModal('detailModal')">
+
             ✕
+
         </button>
 
 
-        <img id="detailImage"
-             class="detailImage">
+        <img
+            id="detailImage"
+            class="detailImage">
 
 
-        <h2 id="detailName"
+        <h2
+            id="detailName"
             class="detailTitle">
         </h2>
 
 
-        <div id="detailCategory">
+        <div
+            id="detailCategory">
         </div>
 
 
-        <div id="detailPrice"
-             class="detailPrice">
+        <div
+            id="detailPrice"
+            class="detailPrice">
         </div>
 
 
-        <p id="detailStock">
+        <p
+            id="detailStock">
         </p>
 
 
-        <button class="orderNow"
-                id="detailOrderButton">
+        <button
+            class="orderNow"
+            id="detailOrderButton">
 
             🛒 Order Now
 
@@ -982,35 +1218,46 @@ textarea{
 </div>
 
 
+<!-- =========================================================
+     SINGLE ORDER FORM
+========================================================= -->
 
-<!-- =========================
-     ORDER FORM
-========================= -->
-
-<div id="orderModal"
-     class="modal">
+<div
+    id="orderModal"
+    class="modal">
 
     <div class="modalBox">
 
-        <button class="close"
-                onclick="closeModal('orderModal')">
+        <button
+            class="close"
+            onclick="closeModal('orderModal')">
+
             ✕
+
         </button>
 
 
         <h2>
             📦 Place Your Order
         </h2>
-        <button class="secondary full" onclick="openManualOrder()">📝 Manual Order (Multiple Items)</button>
 
+
+        <button
+            class="secondary full"
+            onclick="openManualOrder()">
+
+            📝 Manual Order — Multiple Items
+
+        </button>
 
 
         <label>
             Product
         </label>
 
-        <input id="orderProduct"
-               readonly>
+        <input
+            id="orderProduct"
+            readonly>
 
 
         <label>
@@ -1018,67 +1265,99 @@ textarea{
         </label>
 
         <div class="quantityRow">
-    <input id="orderQuantity"
-           type="number"
-           min="1"
-           step="1"
-           inputmode="numeric"
-           pattern="[0-9]*"
-           value="1">
-    <select id="orderUnit">
-        <option value="pcs">Pcs</option>
-        <option value="dozen">Dozen</option>
-        <option value="gram">Gram</option>
-        <option value="250GM">250GM</option>
-        <option value="500GM">500GM</option>
-        <option value="750GM">750GM</option>
-        <option value="KG">KG</option>
-    </select>
-</div>
+
+            <input
+                id="orderQuantity"
+                type="number"
+                min="1"
+                step="1"
+                inputmode="numeric"
+                value="1">
+
+            <select id="orderUnit">
+
+                <option value="pcs">
+                    Pcs
+                </option>
+
+                <option value="dozen">
+                    Dozen
+                </option>
+
+                <option value="gram">
+                    Gram
+                </option>
+
+                <option value="250GM">
+                    250GM
+                </option>
+
+                <option value="500GM">
+                    500GM
+                </option>
+
+                <option value="750GM">
+                    750GM
+                </option>
+
+                <option value="KG">
+                    KG
+                </option>
+
+            </select>
+
+        </div>
 
 
         <label>
             Your Name
         </label>
 
-        <input id="customerName"
-               placeholder="Enter your name">
+        <input
+            id="customerName"
+            placeholder="Enter your name">
 
 
         <label>
             Phone Number
         </label>
 
-        <input id="customerPhone"
-               placeholder="03XXXXXXXXX">
+        <input
+            id="customerPhone"
+            placeholder="03XXXXXXXXX">
 
 
         <label>
             Address
         </label>
 
-        <textarea id="customerAddress"
-                  placeholder="Enter complete address"></textarea>
+        <textarea
+            id="customerAddress"
+            placeholder="Enter complete address"></textarea>
 
 
         <label>
             City
         </label>
 
-        <input id="customerCity"
-               placeholder="Narowal">
+        <input
+            id="customerCity"
+            placeholder="Narowal"
+            value="Narowal">
 
 
-        <button class="primary full"
-                onclick="placeOrder()">
+        <button
+            class="primary full"
+            onclick="placeOrder()">
 
             ✅ Confirm Order
 
         </button>
 
 
-        <div id="orderMessage"
-             class="message">
+        <div
+            id="orderMessage"
+            class="message">
         </div>
 
     </div>
@@ -1086,19 +1365,134 @@ textarea{
 </div>
 
 
+<!-- =========================================================
+     MANUAL MULTIPLE ORDER
+========================================================= -->
 
-<!-- =========================
-     ADMIN LOGIN
-========================= -->
-
-<div id="loginModal"
-     class="modal">
+<div
+    id="manualOrderModal"
+    class="modal">
 
     <div class="modalBox">
 
-        <button class="close"
-                onclick="closeModal('loginModal')">
+        <button
+            class="close"
+            onclick="closeModal('manualOrderModal')">
+
             ✕
+
+        </button>
+
+
+        <h2>
+            📝 Manual Order
+        </h2>
+
+        <p class="smallText">
+            Ek hi order mein jitne products chahiye add karo.
+        </p>
+
+
+        <div
+            id="manualItems">
+        </div>
+
+
+        <button
+            class="secondary full"
+            onclick="addManualItem()">
+
+            ➕ Add Another Product
+
+        </button>
+
+
+        <div class="manualTotal">
+
+            <span>
+                Total
+            </span>
+
+            <span id="manualTotal">
+                Rs. 0
+            </span>
+
+        </div>
+
+
+        <label>
+            Customer Name
+        </label>
+
+        <input
+            id="manualCustomerName"
+            placeholder="Enter customer name">
+
+
+        <label>
+            Phone Number
+        </label>
+
+        <input
+            id="manualCustomerPhone"
+            placeholder="03XXXXXXXXX">
+
+
+        <label>
+            Address
+        </label>
+
+        <textarea
+            id="manualCustomerAddress"
+            placeholder="Enter complete address"></textarea>
+
+
+        <label>
+            City
+        </label>
+
+        <input
+            id="manualCustomerCity"
+            value="Narowal"
+            placeholder="Narowal">
+
+
+        <button
+            class="primary full"
+            style="margin-top:15px"
+            onclick="placeManualOrder()">
+
+            ✅ Confirm Multiple Product Order
+
+        </button>
+
+
+        <div
+            id="manualOrderMessage"
+            class="message">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     ADMIN LOGIN
+========================================================= -->
+
+<div
+    id="loginModal"
+    class="modal">
+
+    <div class="modalBox">
+
+        <button
+            class="close"
+            onclick="closeModal('loginModal')">
+
+            ✕
+
         </button>
 
 
@@ -1122,21 +1516,24 @@ textarea{
             Password
         </label>
 
-        <input id="password"
-               type="password">
+        <input
+            id="password"
+            type="password">
 
 
-        <button id="loginButton"
-                class="primary full"
-                onclick="adminAction()">
+        <button
+            id="loginButton"
+            class="primary full"
+            onclick="adminAction()">
 
             Login
 
         </button>
 
 
-        <div id="loginMessage"
-             class="message">
+        <div
+            id="loginMessage"
+            class="message">
         </div>
 
     </div>
@@ -1144,19 +1541,22 @@ textarea{
 </div>
 
 
-
-<!-- =========================
+<!-- =========================================================
      ADMIN PANEL
-========================= -->
+========================================================= -->
 
-<div id="adminModal"
-     class="modal">
+<div
+    id="adminModal"
+    class="modal">
 
     <div class="modalBox">
 
-        <button class="close"
-                onclick="closeModal('adminModal')">
+        <button
+            class="close"
+            onclick="closeModal('adminModal')">
+
             ✕
+
         </button>
 
 
@@ -1184,17 +1584,19 @@ textarea{
                 Product Name
             </label>
 
-            <input id="newName"
-                   placeholder="Apple">
+            <input
+                id="newName"
+                placeholder="Apple">
 
 
             <label>
                 Price
             </label>
 
-            <input id="newPrice"
-                   type="number"
-                   placeholder="250">
+            <input
+                id="newPrice"
+                type="number"
+                placeholder="250">
 
 
             <label>
@@ -1235,42 +1637,69 @@ textarea{
             </label>
 
             <div class="quantityRow">
-    <input id="newStock"
-           type="number"
-           min="0"
-           step="1"
-           inputmode="numeric"
-           pattern="[0-9]*"
-           placeholder="20">
-    <select id="newStockUnit">
-        <option value="pcs">Pcs</option>
-        <option value="dozen">Dozen</option>
-        <option value="gram">Gram</option>
-        <option value="250GM">250GM</option>
-        <option value="500GM">500GM</option>
-        <option value="750GM">750GM</option>
-        <option value="KG">KG</option>
-    </select>
-</div>
+
+                <input
+                    id="newStock"
+                    type="number"
+                    min="0"
+                    step="1"
+                    inputmode="numeric"
+                    placeholder="20">
+
+
+                <select id="newStockUnit">
+
+                    <option value="pcs">
+                        Pcs
+                    </option>
+
+                    <option value="dozen">
+                        Dozen
+                    </option>
+
+                    <option value="gram">
+                        Gram
+                    </option>
+
+                    <option value="250GM">
+                        250GM
+                    </option>
+
+                    <option value="500GM">
+                        500GM
+                    </option>
+
+                    <option value="750GM">
+                        750GM
+                    </option>
+
+                    <option value="KG">
+                        KG
+                    </option>
+
+                </select>
+
+            </div>
 
 
             <label>
                 Image URL
             </label>
 
-            <input id="newImage"
-                   placeholder="https://example.com/apple.jpg">
+            <input
+                id="newImage"
+                placeholder="https://example.com/apple.jpg">
 
 
-            <button class="primary full"
-                    onclick="addProduct()">
+            <button
+                class="primary full"
+                onclick="addProduct()">
 
                 ➕ Add Product
 
             </button>
 
         </div>
-
 
 
         <!-- MANAGE PRODUCTS -->
@@ -1289,7 +1718,6 @@ textarea{
         </div>
 
 
-
         <!-- ORDERS -->
 
         <div class="adminSection">
@@ -1299,8 +1727,9 @@ textarea{
             </h3>
 
 
-            <button class="secondary"
-                    onclick="loadOrders()">
+            <button
+                class="secondary"
+                onclick="loadOrders()">
 
                 🔄 Refresh Orders
 
@@ -1314,7 +1743,6 @@ textarea{
         </div>
 
 
-
         <!-- PASSWORD -->
 
         <div class="adminSection">
@@ -1324,31 +1752,36 @@ textarea{
             </h3>
 
 
-            <input id="oldPassword"
-                   type="password"
-                   placeholder="Old Password">
+            <input
+                id="oldPassword"
+                type="password"
+                placeholder="Old Password">
 
 
-            <input id="newPassword"
-                   type="password"
-                   placeholder="New Password">
+            <input
+                id="newPassword"
+                type="password"
+                placeholder="New Password">
 
 
-            <input id="confirmPassword"
-                   type="password"
-                   placeholder="Confirm New Password">
+            <input
+                id="confirmPassword"
+                type="password"
+                placeholder="Confirm New Password">
 
 
-            <button class="primary full"
-                    onclick="changePassword()">
+            <button
+                class="primary full"
+                onclick="changePassword()">
 
                 🔐 Change Password
 
             </button>
 
 
-            <div id="passwordMessage"
-                 class="message">
+            <div
+                id="passwordMessage"
+                class="message">
             </div>
 
         </div>
@@ -1356,8 +1789,10 @@ textarea{
 
         <br>
 
-        <button class="danger full"
-                onclick="logoutAdmin()">
+
+        <button
+            class="danger full"
+            onclick="logoutAdmin()">
 
             🔒 Logout
 
@@ -1368,13 +1803,47 @@ textarea{
 </div>
 
 
+<!-- =========================================================
+     SUCCESS
+========================================================= -->
+
+<div
+    id="successOverlay"
+    class="successOverlay">
+
+    <div class="successBox">
+
+        <div class="successIcon">
+            ✅
+        </div>
+
+        <h2>
+            Order Sent Successfully
+        </h2>
+
+        <p>
+            Your order has been sent.
+            You will receive your order within 1 hour.
+        </p>
+
+        <button
+            class="primary"
+            onclick="closeSuccessOverlay()">
+
+            OK
+
+        </button>
+
+    </div>
+
+</div>
+
 
 <script>
 
-
-/* =========================
+/* =========================================================
    SUPABASE
-========================= */
+========================================================= */
 
 const SUPABASE_URL =
 "https://sycvwipjsapmfopkfjtg.supabase.co";
@@ -1383,9 +1852,9 @@ const SUPABASE_KEY =
 "sb_publishable_BlSLf1GZgcpImUn6F749nw_nTSfU9G3";
 
 
-/* =========================
+/* =========================================================
    GLOBALS
-========================= */
+========================================================= */
 
 let allProducts = [];
 
@@ -1399,10 +1868,12 @@ let currentAdminUsername = "";
 
 let adminMode = "login";
 
+let manualOrderItems = [];
 
-/* =========================
-   REQUEST
-========================= */
+
+/* =========================================================
+   SUPABASE REQUEST
+========================================================= */
 
 async function supabaseRequest(path,options={}){
 
@@ -1445,26 +1916,21 @@ async function supabaseRequest(path,options={}){
 
 
     if(!text){
-
         return null;
     }
 
 
     try{
-
         return JSON.parse(text);
-
     }catch{
-
         return text;
-
     }
 }
 
 
-/* =========================
+/* =========================================================
    RPC
-========================= */
+========================================================= */
 
 async function callRPC(name,body){
 
@@ -1504,7 +1970,6 @@ async function callRPC(name,body){
 
 
     if(!text){
-
         return null;
     }
 
@@ -1513,21 +1978,33 @@ async function callRPC(name,body){
 }
 
 
-/* =========================
+/* =========================================================
    HOME
-========================= */
+========================================================= */
 
 function openOrderPanel(){
-    const home = document.getElementById("homeScreen");
-    const app = document.getElementById("app");
 
-    if(home) home.style.display = "none";
-    if(app) app.style.display = "block";
+    const home =
+        document.getElementById(
+            "homeScreen"
+        );
 
-    // Panel opens immediately; product loading happens afterwards.
-    try { loadProducts(); } catch(error) {
-        console.error("Product loading error:", error);
+    const app =
+        document.getElementById(
+            "app"
+        );
+
+
+    if(home){
+        home.style.display = "none";
     }
+
+    if(app){
+        app.style.display = "block";
+    }
+
+
+    loadProducts();
 }
 
 
@@ -1544,9 +2021,9 @@ function goHome(){
 }
 
 
-/* =========================
+/* =========================================================
    PRODUCTS
-========================= */
+========================================================= */
 
 async function loadProducts(){
 
@@ -1576,22 +2053,21 @@ async function loadProducts(){
 
         renderProducts();
 
-
     }catch(error){
 
         console.error(error);
 
         box.innerHTML =
             "<p>Products load nahi ho rahe.<br>" +
-            error.message +
+            escapeHTML(error.message) +
             "</p>";
     }
 }
 
 
-/* =========================
+/* =========================================================
    CATEGORIES
-========================= */
+========================================================= */
 
 function createCategories(){
 
@@ -1661,9 +2137,9 @@ function createCategories(){
 }
 
 
-/* =========================
-   RENDER
-========================= */
+/* =========================================================
+   RENDER PRODUCTS
+========================================================= */
 
 function renderProducts(){
 
@@ -1782,14 +2258,20 @@ function renderProducts(){
             "</div>" +
 
             "<div class='stockText'>" +
+
             (
                 Number(product.stock) > 0
                 ?
                 "Available: " +
-                product.stock + " " + (product.stock_unit || "")
+                product.stock +
+                " " +
+                escapeHTML(
+                    product.stock_unit || ""
+                )
                 :
-                "Out of Stock" 
+                "Out of Stock"
             ) +
+
             "</div>";
 
 
@@ -1815,15 +2297,13 @@ function renderProducts(){
 
 
 function filterProducts(){
-
     renderProducts();
-
 }
 
 
-/* =========================
+/* =========================================================
    PRODUCT DETAIL
-========================= */
+========================================================= */
 
 function openProductDetail(product){
 
@@ -1865,7 +2345,9 @@ function openProductDetail(product){
         Number(product.stock) > 0
         ?
         "Available stock: " +
-        product.stock + " " + (product.stock_unit || "")
+        product.stock +
+        " " +
+        (product.stock_unit || "")
         :
         "Currently out of stock";
 
@@ -1892,7 +2374,6 @@ function openProductDetail(product){
             if(
                 Number(product.stock) <= 0
             ){
-
                 return;
             }
 
@@ -1915,9 +2396,9 @@ function openProductDetail(product){
 }
 
 
-/* =========================
-   ORDER FORM
-========================= */
+/* =========================================================
+   SINGLE ORDER
+========================================================= */
 
 function openOrderForm(product){
 
@@ -1935,6 +2416,12 @@ function openOrderForm(product){
         "orderQuantity"
     ).value =
         1;
+
+
+    document.getElementById(
+        "orderUnit"
+    ).value =
+        "pcs";
 
 
     document.getElementById(
@@ -2000,43 +2487,29 @@ async function placeOrder(){
 
 
     if(!name){
-
         message.textContent =
             "Apna naam likho.";
-
         return;
     }
 
 
     if(!phone){
-
         message.textContent =
             "Phone number likho.";
-
         return;
     }
 
 
     if(!address){
-
         message.textContent =
             "Address likho.";
-
         return;
     }
 
 
-    /*
-       ONLY NAROWAL
-       Accepted:
-       Narowal
-       narowal
-       NAROWAL
-    */
-
     if(
-        city.toLowerCase()
-        !== "narowal"
+        city.toLowerCase() !==
+        "narowal"
     ){
 
         message.textContent =
@@ -2115,39 +2588,37 @@ async function placeOrder(){
         );
 
 
-        message.textContent =
-            "✅ Order successfully placed!";
-
-
-        setTimeout(
-            function(){
-
-                closeModal(
-                    "orderModal"
-                );
-
-                document.getElementById(
-                    "customerName"
-                ).value = "";
-
-                document.getElementById(
-                    "customerPhone"
-                ).value = "";
-
-                document.getElementById(
-                    "customerAddress"
-                ).value = "";
-
-                document.getElementById(
-                    "customerCity"
-                ).value = "";
-
-                document.getElementById("orderQuantity").value = "1";
-                document.getElementById("orderUnit").value = "pcs";
-
-            },
-            3000
+        closeModal(
+            "orderModal"
         );
+
+
+        showSuccess();
+
+
+        document.getElementById(
+            "customerName"
+        ).value = "";
+
+        document.getElementById(
+            "customerPhone"
+        ).value = "";
+
+        document.getElementById(
+            "customerAddress"
+        ).value = "";
+
+        document.getElementById(
+            "customerCity"
+        ).value = "Narowal";
+
+        document.getElementById(
+            "orderQuantity"
+        ).value = "1";
+
+        document.getElementById(
+            "orderUnit"
+        ).value = "pcs";
 
 
     }catch(error){
@@ -2161,16 +2632,713 @@ async function placeOrder(){
 }
 
 
-/* =========================
+/* =========================================================
+   MANUAL MULTIPLE ORDER
+========================================================= */
+
+function openManualOrder(){
+
+    closeModal("orderModal");
+
+    closeModal("detailModal");
+
+
+    manualOrderItems = [];
+
+
+    document.getElementById(
+        "manualItems"
+    ).innerHTML = "";
+
+
+    document.getElementById(
+        "manualOrderMessage"
+    ).textContent = "";
+
+
+    document.getElementById(
+        "manualCustomerName"
+    ).value = "";
+
+
+    document.getElementById(
+        "manualCustomerPhone"
+    ).value = "";
+
+
+    document.getElementById(
+        "manualCustomerAddress"
+    ).value = "";
+
+
+    document.getElementById(
+        "manualCustomerCity"
+    ).value = "Narowal";
+
+
+    document.getElementById(
+        "manualOrderModal"
+    ).style.display =
+        "block";
+
+
+    addManualItem();
+}
+
+
+function addManualItem(){
+
+    if(allProducts.length === 0){
+
+        alert(
+            "Products load hone dein."
+        );
+
+        return;
+    }
+
+
+    const available =
+        allProducts.filter(
+            p => Number(p.stock) > 0
+        );
+
+
+    if(available.length === 0){
+
+        alert(
+            "Abhi koi product stock mein available nahi."
+        );
+
+        return;
+    }
+
+
+    const item = {
+        productId:
+            available[0].id,
+
+        quantity:1,
+
+        unit:
+            available[0].stock_unit ||
+            "pcs"
+    };
+
+
+    manualOrderItems.push(item);
+
+    renderManualItems();
+}
+
+
+function renderManualItems(){
+
+    const box =
+        document.getElementById(
+            "manualItems"
+        );
+
+
+    box.innerHTML = "";
+
+
+    if(
+        manualOrderItems.length === 0
+    ){
+
+        box.innerHTML =
+            '<div class="manualEmpty">Koi product add nahi hua.</div>';
+
+        updateManualTotal();
+
+        return;
+    }
+
+
+    manualOrderItems.forEach(
+        (item,index) => {
+
+            const product =
+                allProducts.find(
+                    p =>
+                        Number(p.id) ===
+                        Number(item.productId)
+                );
+
+
+            if(!product){
+                return;
+            }
+
+
+            const wrapper =
+                document.createElement(
+                    "div"
+                );
+
+
+            wrapper.className =
+                "manualItem";
+
+
+            wrapper.innerHTML = `
+
+                <div class="manualItemTop">
+
+                    <div>
+
+                        <label style="margin-top:0">
+                            Product
+                        </label>
+
+                        <select
+                            onchange="changeManualProduct(${index},this.value)">
+
+                            ${allProducts
+                                .filter(p => Number(p.stock) > 0)
+                                .map(p => `
+                                    <option
+                                        value="${p.id}"
+                                        ${Number(p.id) === Number(item.productId) ? "selected" : ""}>
+                                        ${escapeHTML(p.name)}
+                                    </option>
+                                `)
+                                .join("")}
+
+                        </select>
+
+                        <div class="manualItemPrice">
+                            Rs. ${Number(product.price || 0).toLocaleString()}
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <label style="margin-top:0">
+                            Qty
+                        </label>
+
+                        <input
+                            type="number"
+                            min="1"
+                            step="1"
+                            value="${item.quantity}"
+                            onchange="changeManualQuantity(${index},this.value)">
+
+                    </div>
+
+
+                    <div>
+
+                        <label style="margin-top:0">
+                            Unit
+                        </label>
+
+                        <select
+                            onchange="changeManualUnit(${index},this.value)">
+
+                            <option value="pcs" ${item.unit==="pcs"?"selected":""}>
+                                Pcs
+                            </option>
+
+                            <option value="dozen" ${item.unit==="dozen"?"selected":""}>
+                                Dozen
+                            </option>
+
+                            <option value="gram" ${item.unit==="gram"?"selected":""}>
+                                Gram
+                            </option>
+
+                            <option value="250GM" ${item.unit==="250GM"?"selected":""}>
+                                250GM
+                            </option>
+
+                            <option value="500GM" ${item.unit==="500GM"?"selected":""}>
+                                500GM
+                            </option>
+
+                            <option value="750GM" ${item.unit==="750GM"?"selected":""}>
+                                750GM
+                            </option>
+
+                            <option value="KG" ${item.unit==="KG"?"selected":""}>
+                                KG
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label style="margin-top:0">
+                            &nbsp;
+                        </label>
+
+                        <button
+                            class="removeItemBtn"
+                            onclick="removeManualItem(${index})">
+
+                            ✕
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            box.appendChild(wrapper);
+
+        }
+    );
+
+
+    updateManualTotal();
+}
+
+
+function changeManualProduct(index,value){
+
+    const product =
+        allProducts.find(
+            p =>
+                Number(p.id) ===
+                Number(value)
+        );
+
+
+    if(!product){
+        return;
+    }
+
+
+    manualOrderItems[index].productId =
+        Number(value);
+
+
+    manualOrderItems[index].quantity =
+        1;
+
+
+    manualOrderItems[index].unit =
+        product.stock_unit ||
+        "pcs";
+
+
+    renderManualItems();
+}
+
+
+function changeManualQuantity(index,value){
+
+    let quantity =
+        parseInt(value,10);
+
+
+    if(
+        !Number.isFinite(quantity) ||
+        quantity < 1
+    ){
+        quantity = 1;
+    }
+
+
+    const product =
+        allProducts.find(
+            p =>
+                Number(p.id) ===
+                Number(
+                    manualOrderItems[index]
+                    .productId
+                )
+        );
+
+
+    if(product){
+
+        const stock =
+            Number(product.stock);
+
+
+        if(
+            quantity >
+            stock
+        ){
+
+            quantity =
+                stock;
+
+            alert(
+                "Is product ki maximum available stock " +
+                stock +
+                " hai."
+            );
+        }
+    }
+
+
+    manualOrderItems[index].quantity =
+        quantity;
+
+
+    updateManualTotal();
+}
+
+
+function changeManualUnit(index,value){
+
+    manualOrderItems[index].unit =
+        value;
+}
+
+
+function removeManualItem(index){
+
+    manualOrderItems.splice(
+        index,
+        1
+    );
+
+    renderManualItems();
+}
+
+
+function updateManualTotal(){
+
+    let total = 0;
+
+
+    manualOrderItems.forEach(item => {
+
+        const product =
+            allProducts.find(
+                p =>
+                    Number(p.id) ===
+                    Number(item.productId)
+            );
+
+
+        if(product){
+
+            total +=
+                Number(product.price || 0) *
+                Number(item.quantity || 0);
+
+        }
+
+    });
+
+
+    document.getElementById(
+        "manualTotal"
+    ).textContent =
+        "Rs. " +
+        total.toLocaleString();
+}
+
+
+async function placeManualOrder(){
+
+    const message =
+        document.getElementById(
+            "manualOrderMessage"
+        );
+
+
+    message.textContent = "";
+
+
+    const name =
+        document.getElementById(
+            "manualCustomerName"
+        ).value.trim();
+
+
+    const phone =
+        document.getElementById(
+            "manualCustomerPhone"
+        ).value.trim();
+
+
+    const address =
+        document.getElementById(
+            "manualCustomerAddress"
+        ).value.trim();
+
+
+    const city =
+        document.getElementById(
+            "manualCustomerCity"
+        ).value.trim();
+
+
+    if(!manualOrderItems.length){
+
+        message.textContent =
+            "Kam az kam 1 product add karo.";
+
+        return;
+    }
+
+
+    if(!name){
+
+        message.textContent =
+            "Customer name likho.";
+
+        return;
+    }
+
+
+    if(!phone){
+
+        message.textContent =
+            "Phone number likho.";
+
+        return;
+    }
+
+
+    if(!address){
+
+        message.textContent =
+            "Address likho.";
+
+        return;
+    }
+
+
+    if(
+        city.toLowerCase() !==
+        "narowal"
+    ){
+
+        message.textContent =
+            "❌ Order sirf Narowal city ke liye available hai.";
+
+        return;
+    }
+
+
+    /* Validate all items */
+
+    for(
+        const item of manualOrderItems
+    ){
+
+        const product =
+            allProducts.find(
+                p =>
+                    Number(p.id) ===
+                    Number(item.productId)
+            );
+
+
+        if(!product){
+
+            message.textContent =
+                "Product missing hai.";
+
+            return;
+        }
+
+
+        if(
+            Number(item.quantity) < 1
+        ){
+
+            message.textContent =
+                "Quantity check karo.";
+
+            return;
+        }
+
+
+        if(
+            Number(item.quantity) >
+            Number(product.stock)
+        ){
+
+            message.textContent =
+                product.name +
+                " ki itni quantity stock mein available nahi.";
+
+            return;
+        }
+
+    }
+
+
+    try{
+
+        /*
+         * Multiple products ko ek single orders row mein
+         * store kiya ja raha hai.
+         *
+         * product_name mein items line-by-line save honge.
+         * price mein complete order total save hoga.
+         */
+
+        const orderLines =
+            manualOrderItems.map(
+                item => {
+
+                    const product =
+                        allProducts.find(
+                            p =>
+                                Number(p.id) ===
+                                Number(item.productId)
+                        );
+
+
+                    const itemTotal =
+                        Number(product.price || 0) *
+                        Number(item.quantity || 0);
+
+
+                    return {
+                        name:
+                            product.name,
+
+                        quantity:
+                            Number(item.quantity),
+
+                        unit:
+                            item.unit,
+
+                        price:
+                            Number(product.price || 0),
+
+                        total:
+                            itemTotal
+                    };
+
+                }
+            );
+
+
+        const total =
+            orderLines.reduce(
+                (sum,item) =>
+                    sum +
+                    Number(item.total || 0),
+                0
+            );
+
+
+        const productText =
+            orderLines
+            .map(
+                item =>
+                    item.name +
+                    " | Qty: " +
+                    item.quantity +
+                    " " +
+                    item.unit +
+                    " | Rs. " +
+                    Number(
+                        item.total
+                    ).toLocaleString()
+            )
+            .join("\n");
+
+
+        const totalQuantity =
+            orderLines.reduce(
+                (sum,item) =>
+                    sum +
+                    Number(item.quantity || 0),
+                0
+            );
+
+
+        await supabaseRequest(
+            "orders",
+            {
+                method:"POST",
+
+                headers:{
+                    "Prefer":
+                        "return=minimal"
+                },
+
+                body:
+                    JSON.stringify({
+
+                        customer_name:
+                            name,
+
+                        phone:
+                            phone,
+
+                        address:
+                            address,
+
+                        product_name:
+                            productText,
+
+                        quantity:
+                            totalQuantity,
+
+                        unit:
+                            "Multiple",
+
+                        price:
+                            total,
+
+                        status:
+                            "Pending"
+                    })
+            }
+        );
+
+
+        closeModal(
+            "manualOrderModal"
+        );
+
+
+        showSuccess();
+
+
+        manualOrderItems = [];
+
+
+    }catch(error){
+
+        console.error(error);
+
+        message.textContent =
+            "ORDER ERROR: " +
+            error.message;
+    }
+}
+
+
+/* =========================================================
    ADMIN LOGIN
-========================= */
+========================================================= */
 
 async function openAdminLogin(){
 
-    // Always open the login window first. A database/network error
-    // must never make the Admin button appear dead.
-    document.getElementById("loginModal").style.display = "block";
-    document.getElementById("loginMessage").textContent = "Checking admin account...";
+    document.getElementById(
+        "loginModal"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "loginMessage"
+    ).textContent =
+        "Checking admin account...";
+
 
     try{
 
@@ -2179,7 +3347,10 @@ async function openAdminLogin(){
                 "admin_accounts?select=id&limit=1"
             );
 
-        document.getElementById("loginMessage").textContent = "";
+
+        document.getElementById(
+            "loginMessage"
+        ).textContent = "";
 
 
         if(
@@ -2208,7 +3379,6 @@ async function openAdminLogin(){
             ).textContent =
                 "Create Admin Account";
 
-
         }else{
 
             adminMode =
@@ -2234,20 +3404,20 @@ async function openAdminLogin(){
 
         }
 
-
     }catch(error){
 
-        alert(
+        document.getElementById(
+            "loginMessage"
+        ).textContent =
             "ADMIN ERROR: " +
-            error.message
-        );
+            error.message;
     }
 }
 
 
-/* =========================
+/* =========================================================
    ADMIN ACTION
-========================= */
+========================================================= */
 
 async function adminAction(){
 
@@ -2366,8 +3536,8 @@ async function adminAction(){
                 message.textContent =
                     "Username ya password ghalat hai.";
             }
-        }
 
+        }
 
     }catch(error){
 
@@ -2380,14 +3550,13 @@ async function adminAction(){
 }
 
 
-/* =========================
+/* =========================================================
    ADMIN PANEL
-========================= */
+========================================================= */
 
 function openAdminPanel(){
 
     if(!adminLoggedIn){
-
         return;
     }
 
@@ -2424,9 +3593,9 @@ function logoutAdmin(){
 }
 
 
-/* =========================
+/* =========================================================
    ADD PRODUCT
-========================= */
+========================================================= */
 
 async function addProduct(){
 
@@ -2529,7 +3698,9 @@ async function addProduct(){
             "newStock"
         ).value = "";
 
-        document.getElementById("newStockUnit").value = "pcs";
+        document.getElementById(
+            "newStockUnit"
+        ).value = "pcs";
 
         document.getElementById(
             "newImage"
@@ -2551,9 +3722,9 @@ async function addProduct(){
 }
 
 
-/* =========================
+/* =========================================================
    ADMIN PRODUCTS
-========================= */
+========================================================= */
 
 async function loadAdminProducts(){
 
@@ -2625,12 +3796,15 @@ async function loadAdminProducts(){
 
                     <p>
                     Price:
-                    Rs. ${product.price}
+                    Rs. ${Number(product.price || 0).toLocaleString()}
                     </p>
 
                     <p>
                     Stock:
-                    ${product.stock} ${escapeHTML(product.stock_unit || "")}
+                    ${product.stock}
+                    ${escapeHTML(
+                        product.stock_unit || ""
+                    )}
                     </p>
 
                     <button
@@ -2666,49 +3840,91 @@ async function loadAdminProducts(){
 }
 
 
-/* =========================
+/* =========================================================
    EDIT PRODUCT
-========================= */
+========================================================= */
 
 async function editProduct(id){
 
-    const name =
-        prompt(
-            "New product name:"
-        );
-
-
-    if(name === null){
-
-        return;
-    }
-
-
-    const price =
-        prompt(
-            "New price:"
-        );
-
-
-    if(price === null){
-
-        return;
-    }
-
-
-    const stock =
-        prompt(
-            "New stock:"
-        );
-
-
-    if(stock === null){
-
-        return;
-    }
-
+    /*
+     * Product ko pehle database se fetch karte hain
+     * taa ke current stock unit bhi available ho.
+     */
 
     try{
+
+        const result =
+            await supabaseRequest(
+                "products?id=eq." +
+                id +
+                "&select=*"
+            );
+
+
+        if(
+            !result ||
+            result.length === 0
+        ){
+
+            alert(
+                "Product nahi mila."
+            );
+
+            return;
+        }
+
+
+        const product =
+            result[0];
+
+
+        const name =
+            prompt(
+                "New product name:",
+                product.name
+            );
+
+
+        if(name === null){
+            return;
+        }
+
+
+        const price =
+            prompt(
+                "New price:",
+                product.price
+            );
+
+
+        if(price === null){
+            return;
+        }
+
+
+        const stock =
+            prompt(
+                "New stock:",
+                product.stock
+            );
+
+
+        if(stock === null){
+            return;
+        }
+
+
+        const stockUnit =
+            prompt(
+                "Stock unit (pcs, dozen, gram, 250GM, 500GM, 750GM, KG):",
+                product.stock_unit || "pcs"
+            );
+
+
+        if(stockUnit === null){
+            return;
+        }
+
 
         await supabaseRequest(
             "products?id=eq." +
@@ -2730,7 +3946,9 @@ async function editProduct(id){
 
                         stock:Number(stock),
 
-                        stock_unit:stockUnit
+                        stock_unit:
+                            stockUnit
+
                     })
             }
         );
@@ -2756,9 +3974,9 @@ async function editProduct(id){
 }
 
 
-/* =========================
-   DELETE
-========================= */
+/* =========================================================
+   DELETE PRODUCT
+========================================================= */
 
 async function deleteProduct(id){
 
@@ -2798,173 +4016,973 @@ async function deleteProduct(id){
 }
 
 
-/* =========================
+/* =========================================================
    ORDERS
-========================= */
+========================================================= */
 
 async function loadOrders(){
 
-    const box = document.getElementById("orders");
-    box.innerHTML = "Loading orders...";
+    const box =
+        document.getElementById(
+            "orders"
+        );
+
+
+    box.innerHTML =
+        "Loading orders...";
+
 
     try{
 
-        const orders = await supabaseRequest(
-            "orders?select=*&order=id.asc"
-        );
+        const orders =
+            await supabaseRequest(
+                "orders?select=*&order=id.asc"
+            );
 
-        if(!orders || orders.length === 0){
-            box.innerHTML = "No orders yet.";
+
+        if(
+            !orders ||
+            orders.length === 0
+        ){
+
+            box.innerHTML =
+                "No orders yet.";
+
             return;
         }
 
+
         box.innerHTML = "";
 
-        orders.forEach((order,index) => {
 
-            const div = document.createElement("div");
-            div.className = "orderCard";
+        orders.forEach(
+            (order,index) => {
 
-            const orderNo = index + 1;
-            const status = order.status || "Pending";
+                const div =
+                    document.createElement(
+                        "div"
+                    );
 
-            div.innerHTML = `
-                <div class="orderSummary">
-                    <div>
-                        <div class="orderNumber">Order ${orderNo}</div>
-                        <b>${escapeHTML(order.customer_name || "Customer")}</b>
-                        <div class="productCategory">${escapeHTML(order.product_name || "")}</div>
-                    </div>
-                    <button class="orderToggle"
+
+                div.className =
+                    "orderCard";
+
+
+                const orderNo =
+                    index + 1;
+
+
+                const status =
+                    order.status ||
+                    "Pending";
+
+
+                div.innerHTML = `
+
+                    <div class="orderSummary">
+
+                        <div>
+
+                            <div class="orderNumber">
+                                Order ${orderNo}
+                            </div>
+
+                            <b>
+                                ${escapeHTML(
+                                    order.customer_name ||
+                                    "Customer"
+                                )}
+                            </b>
+
+                            <div class="productCategory">
+                                ${escapeHTML(
+                                    String(
+                                        order.product_name ||
+                                        ""
+                                    ).split("\\n")[0]
+                                )}
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="orderToggle"
                             onclick="toggleOrder(this)">
-                        View Order
-                    </button>
-                </div>
 
-                <div class="orderDetails">
-                    <p><b>Customer:</b> ${escapeHTML(order.customer_name || "")}</p>
-                    <p><b>Phone:</b> ${escapeHTML(order.phone || "")}</p>
-                    <p><b>Address:</b> ${escapeHTML(order.address || "")}</p>
-                    <p><b>Quantity:</b> ${order.quantity} ${escapeHTML(order.unit || "")}</p>
-                    <p><b>Price:</b> Rs. ${Number(order.price || 0).toLocaleString()}</p>
+                            View Order
 
-                    <span class="status">${escapeHTML(status)}</span>
+                        </button>
 
-                    <select class="statusSelect"
-                            onchange="changeOrderStatus(${order.id},this.value)">
-                        <option value="Pending" ${status==="Pending"?"selected":""}>Pending</option>
-                        <option value="Confirmed" ${status==="Confirmed"?"selected":""}>Confirmed</option>
-                        <option value="Preparing" ${status==="Preparing"?"selected":""}>Preparing</option>
-                        <option value="Out for Delivery" ${status==="Out for Delivery"?"selected":""}>Out for Delivery</option>
-                        <option value="Delivered" ${status==="Delivered"?"selected":""}>Delivered</option>
-                        <option value="Cancelled" ${status==="Cancelled"?"selected":""}>Cancelled</option>
-                    </select>
+                    </div>
 
-                    <button class="printBtn"
-                            onclick='printOrderSlip(${JSON.stringify(order)},${orderNo})'>
-                        🖨 Print Slip
-                    </button>
-                </div>
-            `;
 
-            box.appendChild(div);
-        });
+                    <div class="orderDetails">
+
+                        <p>
+                            <b>Customer:</b>
+                            ${escapeHTML(
+                                order.customer_name || ""
+                            )}
+                        </p>
+
+
+                        <p>
+                            <b>Phone:</b>
+                            ${escapeHTML(
+                                order.phone || ""
+                            )}
+                        </p>
+
+
+                        <p>
+                            <b>Address:</b>
+                            ${escapeHTML(
+                                order.address || ""
+                            )}
+                        </p>
+
+
+                        <p>
+                            <b>Items:</b><br>
+                            ${formatOrderItems(
+                                order.product_name || ""
+                            )}
+                        </p>
+
+
+                        <p>
+                            <b>Total:</b>
+                            Rs.
+                            ${Number(
+                                order.price || 0
+                            ).toLocaleString()}
+                        </p>
+
+
+                        <span class="status">
+                            ${escapeHTML(status)}
+                        </span>
+
+
+                        <select
+                            class="statusSelect"
+                            onchange="changeOrderStatus(
+                                ${order.id},
+                                this.value
+                            )">
+
+                            <option
+                                value="Pending"
+                                ${status==="Pending"?"selected":""}>
+                                Pending
+                            </option>
+
+                            <option
+                                value="Confirmed"
+                                ${status==="Confirmed"?"selected":""}>
+                                Confirmed
+                            </option>
+
+                            <option
+                                value="Preparing"
+                                ${status==="Preparing"?"selected":""}>
+                                Preparing
+                            </option>
+
+                            <option
+                                value="Out for Delivery"
+                                ${status==="Out for Delivery"?"selected":""}>
+                                Out for Delivery
+                            </option>
+
+                            <option
+                                value="Delivered"
+                                ${status==="Delivered"?"selected":""}>
+                                Delivered
+                            </option>
+
+                            <option
+                                value="Cancelled"
+                                ${status==="Cancelled"?"selected":""}>
+                                Cancelled
+                            </option>
+
+                        </select>
+
+
+                        <br>
+
+
+                        <button
+                            class="printBtn"
+                            onclick="printOrderSlip(
+                                ${JSON.stringify(order).replace(/"/g,"&quot;")},
+                                ${orderNo}
+                            )">
+
+                            🖨 Print Slip
+
+                        </button>
+
+                    </div>
+
+                `;
+
+
+                /*
+                 * JSON ko direct inline onclick mein use karne ki
+                 * jagah safely button property assign karte hain.
+                 */
+
+                const printButton =
+                    div.querySelector(
+                        ".printBtn"
+                    );
+
+
+                if(printButton){
+
+                    printButton.onclick =
+                        function(){
+
+                            printOrderSlip(
+                                order,
+                                orderNo
+                            );
+
+                        };
+
+                }
+
+
+                box.appendChild(div);
+
+            }
+        );
+
 
     }catch(error){
 
         box.innerHTML =
             "ORDER ERROR: " +
-            escapeHTML(error.message);
+            escapeHTML(
+                error.message
+            );
     }
 }
 
+
+function formatOrderItems(text){
+
+    if(!text){
+        return "";
+    }
+
+
+    return escapeHTML(
+        text
+    ).replace(
+        /\n/g,
+        "<br>"
+    );
+}
+
+
 function toggleOrder(button){
-    const card = button.closest(".orderCard");
-    card.classList.toggle("open");
-    button.textContent = card.classList.contains("open")
-        ? "Hide Order"
-        : "View Order";
+
+    const card =
+        button.closest(
+            ".orderCard"
+        );
+
+
+    card.classList.toggle(
+        "open"
+    );
+
+
+    button.textContent =
+        card.classList.contains("open")
+        ?
+        "Hide Order"
+        :
+        "View Order";
 }
 
 
-function openManualOrder(){
-    const products = prompt("Enter items separated by comma. Example: Apple 2 KG, Banana 1 Dozen");
-    if(!products) return;
-    alert("Manual order list added. Save using normal order button.\n\n"+products);
-}
+/* =========================================================
+   PRINT ORDER SLIP
+   3 INCH WIDTH + DYNAMIC HEIGHT
+========================================================= */
 
-function printOrderSlip(order, orderNo){
+function printOrderSlip(order,orderNo){
 
-    const qty = order.quantity || 0;
-    const unit = order.unit || "";
-    const amount = Number(order.price || 0) * Number(qty || 0);
+    const rawItems =
+        String(
+            order.product_name || ""
+        );
 
-    const popup = window.open("", "_blank", "width=650,height=800");
+
+    /*
+     * Multiple order:
+     *
+     * Apple | Qty: 2 KG | Rs. 500
+     * Banana | Qty: 1 Dozen | Rs. 300
+     *
+     * Single order:
+     * Apple
+     */
+
+    let items = [];
+
+
+    if(
+        rawItems.includes(" | Qty:")
+    ){
+
+        items =
+            rawItems
+            .split("\n")
+            .filter(Boolean)
+            .map(line => {
+
+                const parts =
+                    line.split(
+                        " | "
+                    );
+
+
+                let name =
+                    parts[0] || "";
+
+
+                let quantity =
+                    "";
+
+
+                let amount =
+                    0;
+
+
+                if(parts[1]){
+
+                    quantity =
+                        parts[1]
+                        .replace(
+                            /^Qty:\s*/i,
+                            ""
+                        );
+
+                }
+
+
+                if(parts[2]){
+
+                    amount =
+                        Number(
+                            parts[2]
+                            .replace(
+                                /[^\d.-]/g,
+                                ""
+                            )
+                        ) || 0;
+
+                }
+
+
+                return {
+                    name,
+                    quantity,
+                    amount
+                };
+
+            });
+
+    }else{
+
+        const qty =
+            Number(
+                order.quantity || 0
+            );
+
+
+        const unit =
+            order.unit || "";
+
+
+        const amount =
+            Number(
+                order.price || 0
+            ) * qty;
+
+
+        items = [
+            {
+                name:
+                    rawItems,
+
+                quantity:
+                    qty +
+                    " " +
+                    unit,
+
+                amount:
+                    amount
+            }
+        ];
+
+    }
+
+
+    if(!items.length){
+
+        items = [
+            {
+                name:
+                    "Order Item",
+
+                quantity:
+                    "",
+
+                amount:
+                    Number(
+                        order.price || 0
+                    )
+            }
+        ];
+
+    }
+
+
+    const total =
+        Number(
+            order.price || 0
+        );
+
+
+    /*
+     * IMPORTANT:
+     *
+     * 76.2mm = exactly 3 inches.
+     *
+     * Height fixed nahi rakhi gayi.
+     * Browser/printer content ke mutabiq page height
+     * calculate karega.
+     */
+
+    const popup =
+        window.open(
+            "",
+            "_blank",
+            "width=500,height=800"
+        );
+
 
     if(!popup){
-        alert("Please allow pop-ups to print the slip.");
+
+        alert(
+            "Please allow pop-ups to print the slip."
+        );
+
         return;
     }
 
+
+    const itemRows =
+        items.map(
+            (item,index) => `
+
+                <tr>
+
+                    <td class="num">
+                        ${index + 1}
+                    </td>
+
+                    <td class="item">
+                        ${escapeHTML(item.name)}
+                    </td>
+
+                    <td class="qty">
+                        ${escapeHTML(item.quantity)}
+                    </td>
+
+                    <td class="amount">
+                        Rs.
+                        ${Number(
+                            item.amount || 0
+                        ).toLocaleString()}
+                    </td>
+
+                </tr>
+
+            `
+        ).join("");
+
+
+    const customerName =
+        escapeHTML(
+            order.customer_name || ""
+        );
+
+
+    const phone =
+        escapeHTML(
+            order.phone || ""
+        );
+
+
+    const address =
+        escapeHTML(
+            order.address || ""
+        ).replace(
+            /\n/g,
+            "<br>"
+        );
+
+
+    popup.document.open();
+
+
     popup.document.write(`
+
 <!DOCTYPE html>
+
 <html>
+
 <head>
+
 <meta charset="UTF-8">
-<title>Order ${orderNo} - Mian Super Store</title>
+
+<title>
+Order ${escapeHTML(orderNo)}
+</title>
+
+
 <style>
-body{font-family:Arial,sans-serif;padding:5px;color:#111;width:70mm;font-size:11px}
-.slip{width:70mm;margin:auto}
-h1{text-align:center;margin:0;font-size:16px}
-h2{text-align:center;margin:3px 0 10px;font-size:13px}
-.customer{margin:15px 0;line-height:1.7}
-table{width:100%;border-collapse:collapse;margin-top:15px}
-th,td{border:1px solid #222;padding:2px;text-align:left;font-size:10px}
-th{background:#f1f1f1}
-.total{text-align:right;font-weight:bold;margin-top:15px}
-.address{margin-top:30px;border-top:1px solid #222;padding-top:12px}
-@media print{button{display:none}.slip{height:auto;overflow:visible}}
+
+@page{
+    size:76.2mm auto;
+    margin:0;
+}
+
+
+html,
+body{
+
+    width:76.2mm;
+
+    margin:0;
+
+    padding:0;
+
+    background:white;
+
+}
+
+
+body{
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color:#000;
+
+    font-size:10px;
+
+    line-height:1.25;
+
+}
+
+
+.slip{
+
+    width:76.2mm;
+
+    margin:0;
+
+    padding:
+        2mm
+        2.5mm
+        1mm
+        2.5mm;
+
+    box-sizing:border-box;
+
+}
+
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:5px;
+
+}
+
+
+.store{
+
+    font-size:16px;
+
+    font-weight:900;
+
+    margin:0;
+
+}
+
+
+.location{
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    margin-top:1px;
+
+}
+
+
+.subtitle{
+
+    font-size:9px;
+
+    margin-top:2px;
+
+}
+
+
+.line{
+
+    border-top:1px dashed #000;
+
+    margin:
+        5px
+        0;
+
+}
+
+
+.customer{
+
+    font-size:9.5px;
+
+    line-height:1.45;
+
+}
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    table-layout:fixed;
+
+    margin-top:5px;
+
+}
+
+
+th,
+td{
+
+    border-bottom:
+        1px solid #000;
+
+    padding:
+        3px
+        2px;
+
+    vertical-align:top;
+
+    word-wrap:break-word;
+
+}
+
+
+th{
+
+    font-size:8.5px;
+
+    text-align:left;
+
+}
+
+
+td{
+
+    font-size:9px;
+
+}
+
+
+.num{
+
+    width:7%;
+
+    text-align:center;
+
+}
+
+
+.item{
+
+    width:43%;
+
+}
+
+
+.qty{
+
+    width:22%;
+
+}
+
+
+.amount{
+
+    width:28%;
+
+    text-align:right;
+
+}
+
+
+.totalRow{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    padding-top:6px;
+
+}
+
+
+.address{
+
+    margin-top:6px;
+
+    padding-top:5px;
+
+    border-top:
+        1px solid #000;
+
+    font-size:9.5px;
+
+    line-height:1.4;
+
+}
+
+
+.footer{
+
+    text-align:center;
+
+    margin-top:7px;
+
+    font-size:8.5px;
+
+}
+
+
+@media print{
+
+    html,
+    body{
+
+        width:76.2mm !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+    }
+
+
+    .slip{
+
+        width:76.2mm !important;
+
+        margin:0 !important;
+
+        padding:
+            2mm
+            2.5mm
+            1mm
+            2.5mm !important;
+
+    }
+
+
+    *{
+
+        -webkit-print-color-adjust:exact;
+
+        print-color-adjust:exact;
+
+    }
+
+}
+
 </style>
+
 </head>
-<body onload="window.print()">
+
+
+<body
+    onload="
+        setTimeout(
+            function(){
+                window.print();
+            },
+            300
+        );
+    "
+>
+
 <div class="slip">
-<h1>Mian Super Store</h1>
-<h2>Fruits and Vegetables</h2>
-<div class="customer">
-<b>Order ${orderNo}</b><br>
-<b>Customer Name:</b> ${escapeHTML(order.customer_name || "")}<br>
-<b>Mobile Number:</b> ${escapeHTML(order.phone || "")}
-</div>
-<table>
-<thead>
-<tr><th>No.</th><th>Item Name</th><th>Quantity</th><th>Amount</th></tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>${escapeHTML(order.product_name || "")}</td>
-<td>${qty} ${escapeHTML(unit)}</td>
-<td>Rs. ${amount.toLocaleString()}</td>
-</tr>
-</tbody>
-</table>
-<div class="total">Total: Rs. ${amount.toLocaleString()}</div>
-<div class="address">
-<b>Location / Address:</b><br>
-${escapeHTML(order.address || "")}
-</div>
+
+
+    <div class="header">
+
+        <div class="store">
+            MIAN SUPER STORE
+        </div>
+
+        <div class="location">
+            NAROWAL
+        </div>
+
+        <div class="subtitle">
+            Online Grocery Store
+        </div>
+
+    </div>
+
+
+    <div class="line"></div>
+
+
+    <div class="customer">
+
+        <b>
+            Order #${escapeHTML(orderNo)}
+        </b>
+
+        <br>
+
+        <b>
+            Customer:
+        </b>
+
+        ${customerName}
+
+        <br>
+
+        <b>
+            Mobile:
+        </b>
+
+        ${phone}
+
+    </div>
+
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th class="num">
+                    #
+                </th>
+
+                <th class="item">
+                    Item
+                </th>
+
+                <th class="qty">
+                    Qty
+                </th>
+
+                <th class="amount">
+                    Amount
+                </th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+            ${itemRows}
+
+        </tbody>
+
+    </table>
+
+
+    <div class="totalRow">
+
+        <span>
+            TOTAL
+        </span>
+
+        <span>
+            Rs. ${total.toLocaleString()}
+        </span>
+
+    </div>
+
+
+    <div class="address">
+
+        <b>
+            Location / Address:
+        </b>
+
+        <br>
+
+        ${address}
+
+    </div>
+
+
+    <div class="footer">
+
+        Thank you for shopping with us!
+
+    </div>
+
+
 </div>
 
 </body>
+
 </html>
+
     `);
 
+
     popup.document.close();
+
 }
 
-/* =========================
-   CHANGE ORDER STATUS
-========================= */
+
+/* =========================================================
+   ORDER STATUS
+========================================================= */
 
 async function changeOrderStatus(
     id,
@@ -2973,67 +4991,91 @@ async function changeOrderStatus(
 
     try{
 
-        if(status === "Delivered"){
+        if(
+            status ===
+            "Delivered"
+        ){
 
             const confirmed =
                 confirm(
                     "Mark this order as Delivered and remove it from the order list?"
                 );
 
+
             if(!confirmed){
+
                 loadOrders();
+
                 return;
             }
 
+
             const deletedOrder =
                 await supabaseRequest(
-                    "orders?id=eq." + id,
+                    "orders?id=eq." +
+                    id,
                     {
                         method:"DELETE",
+
                         headers:{
-                            "Prefer":"return=representation"
+                            "Prefer":
+                                "return=representation"
                         }
                     }
                 );
 
-            /*
-             * PostgREST can return an empty array when the DELETE was blocked
-             * by Row Level Security (RLS). Do not show a fake success message.
-             */
-            if(!Array.isArray(deletedOrder) ||
-               deletedOrder.length === 0){
+
+            if(
+                !Array.isArray(
+                    deletedOrder
+                ) ||
+                deletedOrder.length === 0
+            ){
 
                 throw new Error(
                     "Order could not be deleted. Check Supabase RLS DELETE policy for the orders table."
                 );
             }
 
+
             alert(
                 "✅ Order delivered and deleted successfully!"
             );
 
+
             await loadOrders();
+
             return;
         }
 
+
         await supabaseRequest(
-            "orders?id=eq." + id,
+            "orders?id=eq." +
+            id,
             {
                 method:"PATCH",
+
                 headers:{
-                    "Prefer":"return=minimal"
+                    "Prefer":
+                        "return=minimal"
                 },
-                body:JSON.stringify({
-                    status:status
-                })
+
+                body:
+                    JSON.stringify({
+                        status:
+                            status
+                    })
             }
         );
+
 
         alert(
             "✅ Order status updated!"
         );
 
+
         await loadOrders();
+
 
     }catch(error){
 
@@ -3044,9 +5086,10 @@ async function changeOrderStatus(
     }
 }
 
-/* =========================
+
+/* =========================================================
    CHANGE PASSWORD
-========================= */
+========================================================= */
 
 async function changePassword(){
 
@@ -3131,26 +5174,44 @@ async function changePassword(){
 }
 
 
-/* =========================
+/* =========================================================
    MODAL
-========================= */
+========================================================= */
 
 function closeModal(id){
 
+    const element =
+        document.getElementById(id);
+
+
+    if(element){
+        element.style.display =
+            "none";
+    }
+}
+
+
+function showSuccess(){
+
     document.getElementById(
-        id
+        "successOverlay"
+    ).style.display =
+        "flex";
+}
+
+
+function closeSuccessOverlay(){
+
+    document.getElementById(
+        "successOverlay"
     ).style.display =
         "none";
 }
 
-function closeSuccessOverlay(){
-    document.getElementById("successOverlay").style.display = "none";
-}
 
-
-/* =========================
+/* =========================================================
    ESCAPE
-========================= */
+========================================================= */
 
 function escapeHTML(value){
 
@@ -3171,40 +5232,88 @@ function escapeAttr(value){
 }
 
 
-/* =========================
+/* =========================================================
+   INPUT NUMBERS ONLY
+========================================================= */
+
+document.addEventListener(
+    "input",
+    function(e){
+
+        if(
+            e.target &&
+            (
+                e.target.id ===
+                "orderQuantity"
+                ||
+                e.target.id ===
+                "newStock"
+            )
+        ){
+
+            e.target.value =
+                e.target.value.replace(
+                    /[^0-9]/g,
+                    ""
+                );
+        }
+
+    }
+);
+
+
+/* =========================================================
    START
-========================= */
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        const orderButton =
+            document.querySelector(
+                ".choice.order"
+            );
 
 
+        const adminButton =
+            document.querySelector(
+                ".choice.admin"
+            );
 
-document.addEventListener("input", function(e){
-    if(e.target && (e.target.id === "orderQuantity" || e.target.id === "newStock")){
-        e.target.value = e.target.value.replace(/[^0-9]/g,"");
+
+        if(orderButton){
+
+            orderButton.addEventListener(
+                "click",
+                function(){
+
+                    openOrderPanel();
+
+                }
+            );
+
+        }
+
+
+        if(adminButton){
+
+            adminButton.addEventListener(
+                "click",
+                function(){
+
+                    openAdminLogin();
+
+                }
+            );
+
+        }
+
     }
-});
+);
 
-document.addEventListener("DOMContentLoaded", function(){
-    const orderButton = document.querySelector(".choice.order");
-    const adminButton = document.querySelector(".choice.admin");
-
-    if(orderButton){
-        orderButton.addEventListener("click", function(){ openOrderPanel(); });
-    }
-    if(adminButton){
-        adminButton.addEventListener("click", function(){ openAdminLogin(); });
-    }
-});
 </script>
 
-
-<div id="successOverlay" class="successOverlay">
-    <div class="successBox">
-        <div class="successIcon">✅</div>
-        <h2>Order Sent Successfully</h2>
-        <p>Your order has been sent. You will receive your order within 1 hour.</p>
-        <button class="primary" onclick="closeSuccessOverlay()">OK</button>
-    </div>
-</div>
-
 </body>
+
 </html>
