@@ -4077,6 +4077,35 @@ async function loadOrders(){
                     "Pending";
 
 
+                const orderItems =
+                    parseOrderItems(order);
+
+
+                const orderTotal =
+                    orderItems.reduce(
+                        (sum,item) =>
+                            sum +
+                            Number(item.amount || 0),
+                        0
+                    );
+
+
+                const itemSummary =
+                    orderItems.length === 1
+                    ?
+                    orderItems[0].name
+                    :
+                    orderItems
+                        .map(item =>
+                            item.name +
+                            " × " +
+                            item.quantity +
+                            " " +
+                            item.unit
+                        )
+                        .join(", ");
+
+
                 div.innerHTML = `
 
                     <div class="orderSummary">
@@ -4096,10 +4125,7 @@ async function loadOrders(){
 
                             <div class="productCategory">
                                 ${escapeHTML(
-                                    String(
-                                        order.product_name ||
-                                        ""
-                                    ).split("\\n")[0]
+                                    itemSummary
                                 )}
                             </div>
 
@@ -4144,9 +4170,35 @@ async function loadOrders(){
 
 
                         <p>
-                            <b>Items:</b><br>
-                            ${formatOrderItems(
-                                order.product_name || ""
+                            <b>Items:</b>
+                            <div class="orderItemsList">
+                                ${orderItems.map((item,itemIndex) => `
+                                    <div style="padding:8px 0;border-bottom:1px dashed #d7e3dd;">
+                                        <b>${itemIndex + 1}. ${escapeHTML(item.name)}</b><br>
+                                        Quantity:
+                                        <b>${escapeHTML(String(item.quantity))} ${escapeHTML(String(item.unit || ""))}</b>
+                                        &nbsp; × &nbsp;
+                                        Rate:
+                                        <b>Rs. ${Number(item.rate || 0).toLocaleString()}</b>
+                                        &nbsp; = &nbsp;
+                                        <b>Rs. ${Number(item.amount || 0).toLocaleString()}</b>
+                                    </div>
+                                `).join("")}
+                            </div>
+                        </p>
+
+
+                        <p>
+                            <b>Total Quantity:</b>
+                            ${escapeHTML(
+                                String(
+                                    orderItems.reduce(
+                                        (sum,item) =>
+                                            sum +
+                                            Number(item.quantity || 0),
+                                        0
+                                    )
+                                )
                             )}
                         </p>
 
@@ -4155,7 +4207,7 @@ async function loadOrders(){
                             <b>Total:</b>
                             Rs.
                             ${Number(
-                                order.price || 0
+                                orderTotal
                             ).toLocaleString()}
                         </p>
 
@@ -4215,11 +4267,7 @@ async function loadOrders(){
 
 
                         <button
-                            class="printBtn"
-                            onclick="printOrderSlip(
-                                ${JSON.stringify(order).replace(/"/g,"&quot;")},
-                                ${orderNo}
-                            )">
+                            class="printBtn">
 
                             🖨 Print Slip
 
@@ -4229,11 +4277,6 @@ async function loadOrders(){
 
                 `;
 
-
-                /*
-                 * JSON ko direct inline onclick mein use karne ki
-                 * jagah safely button property assign karte hain.
-                 */
 
                 const printButton =
                     div.querySelector(
@@ -4273,20 +4316,162 @@ async function loadOrders(){
 }
 
 
-function formatOrderItems(text){
+function parseOrderItems(order){
 
-    if(!text){
-        return "";
+    const rawItems =
+        String(
+            order.product_name || ""
+        );
+
+
+    if(
+        rawItems.includes(" | Qty:")
+    ){
+
+        return rawItems
+            .split("\n")
+            .filter(Boolean)
+            .map(line => {
+
+                const parts =
+                    line.split(
+                        " | "
+                    );
+
+
+                const name =
+                    parts[0] || "";
+
+
+                let quantityText =
+                    "";
+
+
+                let amount =
+                    0;
+
+
+                if(parts[1]){
+
+                    quantityText =
+                        parts[1]
+                        .replace(
+                            /^Qty:\s*/i,
+                            ""
+                        )
+                        .trim();
+
+                }
+
+
+                if(parts[2]){
+
+                    amount =
+                        Number(
+                            parts[2]
+                            .replace(
+                                /[^\d.-]/g,
+                                ""
+                            )
+                        ) || 0;
+
+                }
+
+
+                const quantityMatch =
+                    quantityText.match(
+                        /^([0-9]+(?:\.[0-9]+)?)\s*(.*)$/
+                    );
+
+
+                const quantity =
+                    quantityMatch
+                    ?
+                    quantityMatch[1]
+                    :
+                    quantityText;
+
+
+                const unit =
+                    quantityMatch
+                    ?
+                    quantityMatch[2]
+                    :
+                    "";
+
+
+                return {
+                    name,
+                    quantity,
+                    unit,
+                    rate:
+                        Number(quantity) > 0
+                        ?
+                        amount / Number(quantity)
+                        :
+                        0,
+                    amount
+                };
+
+            });
+
     }
 
 
-    return escapeHTML(
-        text
-    ).replace(
-        /\n/g,
-        "<br>"
-    );
+    const quantity =
+        Number(
+            order.quantity || 0
+        );
+
+
+    const unit =
+        order.unit || "";
+
+
+    const rate =
+        Number(
+            order.price || 0
+        );
+
+
+    return [
+        {
+            name:
+                rawItems || "Order Item",
+
+            quantity:
+                quantity,
+
+            unit:
+                unit,
+
+            rate:
+                rate,
+
+            amount:
+                rate * quantity
+        }
+    ];
 }
+
+
+function formatOrderItems(order){
+
+    return parseOrderItems(order)
+        .map((item,index) =>
+            `
+            <div style="padding:7px 0;border-bottom:1px dashed #d7e3dd;">
+                <b>${index + 1}. ${escapeHTML(item.name)}</b><br>
+                Qty: <b>${escapeHTML(String(item.quantity))} ${escapeHTML(String(item.unit || ""))}</b>
+                × Rs. ${Number(item.rate || 0).toLocaleString()}
+                = <b>Rs. ${Number(item.amount || 0).toLocaleString()}</b>
+            </div>
+            `
+        )
+        .join("");
+}
+
+
 
 
 function toggleOrder(button){
@@ -4318,158 +4503,31 @@ function toggleOrder(button){
 
 function printOrderSlip(order,orderNo){
 
-    const rawItems =
-        String(
-            order.product_name || ""
-        );
-
-
-    /*
-     * Multiple order:
-     *
-     * Apple | Qty: 2 KG | Rs. 500
-     * Banana | Qty: 1 Dozen | Rs. 300
-     *
-     * Single order:
-     * Apple
-     */
-
-    let items = [];
-
-
-    if(
-        rawItems.includes(" | Qty:")
-    ){
-
-        items =
-            rawItems
-            .split("\n")
-            .filter(Boolean)
-            .map(line => {
-
-                const parts =
-                    line.split(
-                        " | "
-                    );
-
-
-                let name =
-                    parts[0] || "";
-
-
-                let quantity =
-                    "";
-
-
-                let amount =
-                    0;
-
-
-                if(parts[1]){
-
-                    quantity =
-                        parts[1]
-                        .replace(
-                            /^Qty:\s*/i,
-                            ""
-                        );
-
-                }
-
-
-                if(parts[2]){
-
-                    amount =
-                        Number(
-                            parts[2]
-                            .replace(
-                                /[^\d.-]/g,
-                                ""
-                            )
-                        ) || 0;
-
-                }
-
-
-                return {
-                    name,
-                    quantity,
-                    amount
-                };
-
-            });
-
-    }else{
-
-        const qty =
-            Number(
-                order.quantity || 0
-            );
-
-
-        const unit =
-            order.unit || "";
-
-
-        const amount =
-            Number(
-                order.price || 0
-            ) * qty;
-
-
-        items = [
-            {
-                name:
-                    rawItems,
-
-                quantity:
-                    qty +
-                    " " +
-                    unit,
-
-                amount:
-                    amount
-            }
-        ];
-
-    }
+    const items =
+        parseOrderItems(order);
 
 
     if(!items.length){
 
-        items = [
-            {
-                name:
-                    "Order Item",
-
-                quantity:
-                    "",
-
-                amount:
-                    Number(
-                        order.price || 0
-                    )
-            }
-        ];
+        items.push({
+            name:"Order Item",
+            quantity:"",
+            unit:"",
+            rate:0,
+            amount:0
+        });
 
     }
 
 
     const total =
-        Number(
-            order.price || 0
+        items.reduce(
+            (sum,item) =>
+                sum +
+                Number(item.amount || 0),
+            0
         );
 
-
-    /*
-     * IMPORTANT:
-     *
-     * 76.2mm = exactly 3 inches.
-     *
-     * Height fixed nahi rakhi gayi.
-     * Browser/printer content ke mutabiq page height
-     * calculate karega.
-     */
 
     const popup =
         window.open(
@@ -4504,7 +4562,19 @@ function printOrderSlip(order,orderNo){
                     </td>
 
                     <td class="qty">
-                        ${escapeHTML(item.quantity)}
+                        ${escapeHTML(
+                            String(item.quantity)
+                        )}
+                        ${escapeHTML(
+                            String(item.unit || "")
+                        )}
+                    </td>
+
+                    <td class="rate">
+                        Rs.
+                        ${Number(
+                            item.rate || 0
+                        ).toLocaleString()}
                     </td>
 
                     <td class="amount">
@@ -4572,8 +4642,10 @@ body{
 
     width:76.2mm;
 
-    margin:0;
+    height:auto !important;
+    min-height:0 !important;
 
+    margin:0;
     padding:0;
 
     background:white;
@@ -4600,6 +4672,9 @@ body{
 .slip{
 
     width:76.2mm;
+
+    height:auto !important;
+    min-height:0 !important;
 
     margin:0;
 
@@ -4706,7 +4781,7 @@ td{
 
 th{
 
-    font-size:8.5px;
+    font-size:8px;
 
     text-align:left;
 
@@ -4715,14 +4790,14 @@ th{
 
 td{
 
-    font-size:9px;
+    font-size:8.5px;
 
 }
 
 
 .num{
 
-    width:7%;
+    width:6%;
 
     text-align:center;
 
@@ -4731,21 +4806,30 @@ td{
 
 .item{
 
-    width:43%;
+    width:36%;
 
 }
 
 
 .qty{
 
-    width:22%;
+    width:20%;
+
+}
+
+
+.rate{
+
+    width:18%;
+
+    text-align:right;
 
 }
 
 
 .amount{
 
-    width:28%;
+    width:20%;
 
     text-align:right;
 
@@ -4796,13 +4880,20 @@ td{
 
 @media print{
 
+    @page{
+        size:76.2mm auto;
+        margin:0;
+    }
+
     html,
     body{
 
         width:76.2mm !important;
 
-        margin:0 !important;
+        height:auto !important;
+        min-height:0 !important;
 
+        margin:0 !important;
         padding:0 !important;
 
     }
@@ -4811,6 +4902,9 @@ td{
     .slip{
 
         width:76.2mm !important;
+
+        height:auto !important;
+        min-height:0 !important;
 
         margin:0 !important;
 
@@ -4915,6 +5009,10 @@ td{
                     Qty
                 </th>
 
+                <th class="rate">
+                    Rate
+                </th>
+
                 <th class="amount">
                     Amount
                 </th>
@@ -4978,6 +5076,7 @@ td{
     popup.document.close();
 
 }
+
 
 
 /* =========================================================
